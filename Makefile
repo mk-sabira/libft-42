@@ -28,9 +28,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-PARENT_DIR      = $(shell dirname $(shell pwd))
-LIBFT_PATH      = $(PARENT_DIR)
-
 clean:
 	$(RM) $(OBJS)
 
