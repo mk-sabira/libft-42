@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+         #
+#    By: bmakhama <bmakhama@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/01 09:32:53 by bmakhama          #+#    #+#              #
-#    Updated: 2024/01/06 14:05:00 by bmakhama         ###   ########.fr        #
+#    Updated: 2024/01/07 11:43:51 by bmakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

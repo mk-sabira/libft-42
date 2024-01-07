@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bmakhama <bmakhama@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 10:20:19 by bmakhama          #+#    #+#             */
-/*   Updated: 2024/01/06 15:59:29 by bmakhama         ###   ########.fr       */
+/*   Updated: 2024/01/07 11:45:18 by bmakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 # define LIBFT_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
-int		ft_isprint( int c);
+int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
