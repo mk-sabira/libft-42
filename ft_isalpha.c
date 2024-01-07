@@ -1,25 +1,21 @@
-#include <stdio.h>
-#include <ctype.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/31 12:54:38 by bmakhama          #+#    #+#             */
+/*   Updated: 2024/01/06 14:41:17 by bmakhama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_isalpha(int c)
-{
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-        return (1);
-    else
-        return (0);
-}
-int main(void)
-{
-    int c;
+#include "libft.h"
 
-    c = 'H';
-    printf("the actual fun is : %d\n", isalpha(c));
-    printf("the func is : %d\n", ft_isalpha(c) );
-    c = 't';
-    printf("the char c is : %d\n", isalpha(c));
-    printf("the func is : %d\n", ft_isalpha(c) );
-    c = '9';
-    printf("the char c is : %d\n", isalpha(c));
-    printf("the func is : %d\n", ft_isalpha(c) );
-    return(0);
+int	ft_isalpha(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	else
+		return (0);
 }

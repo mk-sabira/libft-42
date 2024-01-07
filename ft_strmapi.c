@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/24 11:31:59 by bmakhama          #+#    #+#             */
-/*   Updated: 2024/01/02 11:13:00 by bmakhama         ###   ########.fr       */
+/*   Created: 2023/12/29 11:47:12 by bmakhama          #+#    #+#             */
+/*   Updated: 2024/01/05 11:54:31 by bmakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t		i;
-	const char	*src2;
-	char		*dest2;
+	size_t	len_s;
+	char	*result;
+	size_t	i;
 
-	i = 0;
-	src2 = (char *) src;
-	dest2 = (char *) dest;
-	if (!dest && !src)
+	if (!s)
 		return (0);
-	while (i < n)
+	len_s = ft_strlen(s);
+	i = 0;
+	result = (char *)malloc(len_s + 1);
+	if (!result)
+		return (NULL);
+	while (s[i] != 0)
 	{
-		dest2[i] = src2[i];
+		result[i] = f(i, s[i]);
 		i++;
 	}
-	return (dest2);
+	result[len_s] = '\0';
+	return (result);
 }

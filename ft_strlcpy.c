@@ -1,37 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/01 09:17:39 by bmakhama          #+#    #+#             */
+/*   Updated: 2024/01/01 09:18:15 by bmakhama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t ft_strlcpy(char * dst, const char * src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-    size_t i;
-    
-    i = 0;
-    if (dstsize == 0)
-    {
-        while (src[i])
-            i++;
-        return (i);
-    }
-    while (i < dstsize - 1 && src[i] != '\0')
-    {
-        dst[i] = src [i];
-        i++;
-    }
-    if (i < dstsize)
-        dst[i] = '\0';
-    while (src[i] != '\0')
-        i++;
-    return (i);
+	size_t	i;
 
-
-
-}
-
-int main (void)
-{
-    char src[200] = "hello world";
-    char dest[20];
-    size_t destsize = ft_strlcpy(dest, src, 12);
-    printf ("the destination: %s\n", dest);
-    printf ("the destination len: %zu\n", destsize);
-    return (0);
+	i = 0;
+	if (dstsize == 0)
+	{
+		while (src[i])
+			i++;
+		return (i);
+	}
+	while (i < dstsize - 1 && src[i] != '\0')
+	{
+		dst[i] = src [i];
+		i++;
+	}
+	if (i < dstsize)
+		dst[i] = '\0';
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }

@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/24 11:31:59 by bmakhama          #+#    #+#             */
-/*   Updated: 2024/01/02 11:13:00 by bmakhama         ###   ########.fr       */
+/*   Created: 2023/12/27 16:07:18 by bmakhama          #+#    #+#             */
+/*   Updated: 2023/12/27 16:42:03 by bmakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
-	size_t		i;
-	const char	*src2;
-	char		*dest2;
+	size_t	str_len;
+	size_t	i;
+	char	*substring;
 
+	str_len = 0;
 	i = 0;
-	src2 = (char *) src;
-	dest2 = (char *) dest;
-	if (!dest && !src)
+	if (!str)
 		return (0);
-	while (i < n)
+	while (str[str_len] != '\0')
+		++str_len;
+	if (start >= str_len)
+		len = 0;
+	else if (len > str_len - start)
+		len = str_len - start;
+	substring = (char *) malloc ((len + 1) * sizeof (char));
+	if (substring == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		dest2[i] = src2[i];
+		substring[i] = str[start + i];
 		i++;
 	}
-	return (dest2);
+	substring[len] = '\0';
+	return (substring);
 }

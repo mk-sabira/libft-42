@@ -1,24 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/26 12:40:18 by bmakhama          #+#    #+#             */
+/*   Updated: 2023/12/26 12:40:35 by bmakhama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
-        c -= 32;
-    return(c);
-}
-
-int	main(void)
-{
-	char str[9] = "hello";
-	int i;
-	char lowcase;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		lowcase = str[i];
-		printf("%c", ft_toupper(lowcase));
-		i++;
-	}
-	return (0);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

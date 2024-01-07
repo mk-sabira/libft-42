@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/24 11:31:59 by bmakhama          #+#    #+#             */
-/*   Updated: 2024/01/02 11:13:00 by bmakhama         ###   ########.fr       */
+/*   Created: 2023/12/27 16:43:27 by bmakhama          #+#    #+#             */
+/*   Updated: 2024/01/01 09:17:31 by bmakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t		i;
-	const char	*src2;
-	char		*dest2;
+	char	*ptr;
+	size_t	len;
+	int		i;
 
-	i = 0;
-	src2 = (char *) src;
-	dest2 = (char *) dest;
-	if (!dest && !src)
+	if ((!s1) || (!s2))
 		return (0);
-	while (i < n)
-	{
-		dest2[i] = src2[i];
-		i++;
-	}
-	return (dest2);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	ptr = (char *)malloc(sizeof(char) * len);
+	if (!ptr)
+		return (0);
+	i = 0;
+	while (*s1)
+		ptr[i++] = *(s1)++;
+	while (*s2)
+		ptr[i++] = *(s2)++;
+	ptr[i] = '\0';
+	return (ptr);
 }

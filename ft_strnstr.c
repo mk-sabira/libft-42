@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/24 11:31:59 by bmakhama          #+#    #+#             */
-/*   Updated: 2024/01/02 11:13:00 by bmakhama         ###   ########.fr       */
+/*   Created: 2023/12/26 12:04:09 by bmakhama          #+#    #+#             */
+/*   Updated: 2023/12/26 12:29:23 by bmakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	size_t		i;
-	const char	*src2;
-	char		*dest2;
+	size_t			i;
+	size_t			j;
 
 	i = 0;
-	src2 = (char *) src;
-	dest2 = (char *) dest;
-	if (!dest && !src)
-		return (0);
-	while (i < n)
+	j = 0;
+	if (to_find[j] == '\0')
+		return ((char *)str);
+	while (i < len && str[i])
 	{
-		dest2[i] = src2[i];
+		while ((i + j) < len && str[i + j] == to_find[j] && to_find[j])
+			j++;
+		if (to_find[j] == '\0')
+			return ((char *)str + i);
 		i++;
+		j = 0;
 	}
-	return (dest2);
+	return (NULL);
 }

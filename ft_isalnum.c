@@ -1,25 +1,22 @@
-#include <stdio.h>
-#include <ctype.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/29 12:07:26 by bmakhama          #+#    #+#             */
+/*   Updated: 2024/01/02 10:40:15 by bmakhama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_isalnum(int c)
-{
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 49 && c <= 57))
-        return (1);
-    else
-        return (0);
-}
-int main(void)
-{
-    int c;
+#include "libft.h"
 
-    c = '*';
-    printf("the actual fun is : %d\n", isalnum(c));
-    printf("the func is : %d\n", ft_isalnum(c) );
-    c = 't';
-    printf("the char c is : %d\n", isalpha(c));
-    printf("the func is : %d\n", ft_isalnum(c) );
-    c = '9';
-    printf("the char c is : %d\n", isalnum(c));
-    printf("the func is : %d\n", ft_isalnum(c) );
-    return(0);
+int	ft_isalnum(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || \
+	(c >= 48 && c <= 57))
+		return (1);
+	else
+		return (0);
 }

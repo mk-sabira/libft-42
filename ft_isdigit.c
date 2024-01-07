@@ -1,22 +1,21 @@
-#include <stdio.h>
-#include <ctype.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bmakhama <bmakhama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/31 12:56:10 by bmakhama          #+#    #+#             */
+/*   Updated: 2024/01/02 10:37:25 by bmakhama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_isdigit(int c)
-{
-    if (c >= 49 && c <= 57)
-        return (1);
-    else
-        return (0);
-}
-int main(void)
-{
-    int c;
+#include "libft.h"
 
-    c = 't';
-    printf("the char c is : %d\n", isdigit(c));
-    printf("the func is : %d\n", ft_isdigit(c) );
-    c = '9';
-    printf("the char c is : %d\n", isdigit(c));
-    printf("the func is : %d\n", ft_isdigit(c) );
-    return(0);
+int	ft_isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }

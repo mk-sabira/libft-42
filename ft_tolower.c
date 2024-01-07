@@ -18,19 +18,3 @@ int	ft_tolower(int c)
 		c += 32;
 	return (c);
 }
-
-// int	main(void)
-// {
-// 	char str[9] = "HELLO";
-// 	int i;
-// 	char lowcase;
-
-// 	i = 0;
-// 	while (str[i] != '\0')
-// 	{
-// 		lowcase = str[i];
-// 		printf("%c", ft_tolower(lowcase));
-// 		i++;
-// 	}
-// 	return (0);
-// }
